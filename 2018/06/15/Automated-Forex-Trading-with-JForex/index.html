@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<meta name="description" content="Hugh Pearse, Software Developer, Dublin Ireland">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Automated Forex Trading (MetaTrader &amp; JForex) | Hugh Pearse</title>
+	<meta name="author" content="Hugh Pearse">
+	<link rel="canonical" href="https://hughpearse.github.io/2018/06/15/Automated-Forex-Trading-with-JForex/">
+	<meta name="description" content="IntroductionForeign Exchange (forex) trading is the act of buying or selling currencies. The exchange rate is the rate at which one currency will be exchanged for another. Supply and demand for any gi">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Automated Forex Trading (MetaTrader &amp; JForex) | Hugh Pearse">
+	<meta property="og:url" content="https://hughpearse.github.io/2018/06/15/Automated-Forex-Trading-with-JForex/">
+	<meta property="og:site_name" content="Hugh Pearse">
+	<meta property="article:published_time" content="2018-06-15T09:01:55.000Z">
+	<meta property="og:description" content="IntroductionForeign Exchange (forex) trading is the act of buying or selling currencies. The exchange rate is the rate at which one currency will be exchanged for another. Supply and demand for any gi">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://hughpearse.github.io/images/pasted-18.png?1558547230668">
+	<meta property="og:updated_time" content="2019-05-22T16:17:51.603Z">
+	<meta property="article:modified_time" content="2019-05-22T16:17:51.603Z">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Automated Forex Trading (MetaTrader &amp; JForex) | Hugh Pearse">
+	<meta name="twitter:description" content="IntroductionForeign Exchange (forex) trading is the act of buying or selling currencies. The exchange rate is the rate at which one currency will be exchanged for another. Supply and demand for any gi">
+	<meta name="twitter:image" content="https://hughpearse.github.io/images/pasted-18.png?1558547230668">
+	
+	
+		<link rel="icon" href="/favicon.ico?2019-05-22T17:47:10.668Z">
+	
+	
+		<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	
+		<!--link href="/css/css?family=Source+Code+Pro|Jura" rel="stylesheet" type="text/css"-->
+	
+	<link rel="stylesheet" href="/css/style.css?2019-05-22T17:47:10.668Z">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121349637-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-121349637-1');
+	</script>
+</head>
+<body>
+	<a name="top"></a>
+	<header>
+		
+	</header>
+	<div class="container bg-white pt-3 p-3 mt-3 mb-3">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#theme-navigation" aria-controls="theme-navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="theme-navigation">
+			<a class="navbar-brand" href>Weblog</a>
+				<div class="navbar-collapse">
+					<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link " href="/">
+									Home
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/archives/">
+									Archive
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://www.linkedin.com/in/hughpearse/">
+									LinkedIn
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://github.com/hughpearse">
+									Github
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/about">
+									About
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/references">
+									References
+								</a>
+							</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="blog-header container" style="text-align: center;">
+			<a href="/">
+				<h1 class="blog-title">Hugh Pearse</h1>
+			</a>
+	
+		</div>
+	    <div class="row">
+        	<main class="blog-main px-2" style="max-width: 100%;">
+        		<article id="post-Automated-Forex-Trading-with-JForex" class="article article-type-post blog-post" itemscope itemtype="http://schema.org/Article">
+<header class="article-header text-center">
+
+	<span itemprop="mainEntityOfPage">
+		<h1 class=" blog-post-title" itemprop="name headline">
+			Automated Forex Trading (MetaTrader &amp; JForex)
+		</h1>
+	</span>
+
+</header>
+<div class="article-meta blog-post-meta text-center">
+	
+
+
+	<div class="article-datetime">
+	<time datetime="2018-06-15T09:01:55.000Z" itemprop="datePublished" content="2018-06-15T09:01:55.000Z">2018-06-15</time>
+	<time datetime="2018-06-15T09:01:55.000Z">10:01:55</time><span itemprop="dateModified" content="2019-05-22T16:17:51.603Z>" < span>
+	</span></div>
+
+	
+		<div class="article-author">
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<span itemprop="name" content="Hugh Pearse">
+				</span>
+			</span>
+			<span itemtype="https://schema.org/Organization" itemscope="itemscope" itemprop="publisher">
+				<span itemprop="name">
+					Hugh Pearse
+				</span>
+				<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content>
+				</span>
+				</span>
+			
+		</div>
+	
+	
+	</div>
+
+<div class="article-inner">
+	
+<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+	<meta itemprop="url" content>
+</div>
+<div class="article-entry" itemprop="articleBody">
+	
+		<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Foreign Exchange (forex) trading is the act of buying or selling currencies. The exchange rate is the rate at which one currency will be exchanged for another. Supply and demand for any given currency, and thus its value, are not influenced by any single element, but rather by several. </p>
+<p>Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions. Most forex market trades are now performed by algorithms, not humans, and they’ve already caused <a href="https://en.wikipedia.org/wiki/Flash_crash" title="Flash Crash" target="_blank" rel="noopener">crashes</a>.</p>
+<h2 id="Foreign-Exchange-Market"><a href="#Foreign-Exchange-Market" class="headerlink" title="Foreign Exchange Market"></a>Foreign Exchange Market</h2><p>The <a href="https://www.theforexguy.com/how-forex-trading-works/" title="The Forex Market Structure" target="_blank" rel="noopener">foreign exchange market</a> is the “place” where currencies are traded. It is by far the largest market in the world. One unique aspect of this international market is that there is no central marketplace for foreign exchange. Rather, currency trading is conducted electronically over-the-counter (OTC), which means that all transactions occur via computer networks between traders around the world, rather than on one centralized exchange. The market is open 24 hours a day, five and a half days a week</p>
+<h2 id="The-Interbank-Network"><a href="#The-Interbank-Network" class="headerlink" title="The Interbank Network"></a>The Interbank Network</h2><p>The interbank network contains the central and major banks. They form the core of the Foreign Exchange network. </p>
+<h2 id="Market-Makers-MM"><a href="#Market-Makers-MM" class="headerlink" title="Market Makers (MM)"></a>Market Makers (MM)</h2><p>To be able to start making trades as a private individual you need to sign up to a broker. Your broker provides access the interbank network to start making trades with the rest of the world. Brokers are the market makers. When you place a trade order, the MM will first try to match up your trade with another client of the MM, bypassing the interbank network all together. If this is successful the MM now has a free hedge trade and is at no risk of loss. If the MM can’t match up the trade amongst its own clients, they will usually open a trade in the opposite direction to yours (a hedge trade) on the interbank network to protect themselves or even profit from any losses your trade may attract. MM’s have access to the cheaper interbank network market prices. The MM adds their commission onto the interbank price and passes that on to you. The difference in prices is called the “Bid-Ask spread”. The spread is one of the ways MMs make a profit.</p>
+<h2 id="Currency-Pairs"><a href="#Currency-Pairs" class="headerlink" title="Currency Pairs"></a>Currency Pairs</h2><p>A currency pair is the quotation of the relative value of a currency unit against the unit of another currency. The base currency is the first currency appearing in a currency pair quotation, followed by the second part of the quotation, called the quote currency: BBB/QQQ. From its inception in 1999 and as stipulated by the European Central Bank, the euro has first precedence as a base currency. Therefore, all currency pairs involving it should use it as their base, listed first. For example, the U.S. dollar and Euro exchange rate is identified as EUR/USD.</p>
+<h2 id="Price-Quotations"><a href="#Price-Quotations" class="headerlink" title="Price Quotations"></a>Price Quotations</h2><p>The quotation “EUR/USD 1.3225” means that for every Euro you will get 1.3225 U.S. Dollars. And for every 1 U.S. Dollar you will get 1/1.3225=0.7561 Euro.</p>
+<h2 id="Electronic-Trading-Platform"><a href="#Electronic-Trading-Platform" class="headerlink" title="Electronic Trading Platform"></a>Electronic Trading Platform</h2><p>An electronic trading platform is a software program that can be used to place orders for financial products over a computer network through a financial intermediary.</p>
+<h2 id="Automated-Forex-Trading"><a href="#Automated-Forex-Trading" class="headerlink" title="Automated Forex Trading"></a>Automated Forex Trading</h2><p>Automated forex trading is a system of trading foreign currencies with a computer program based on a set of analyses that help determine whether to buy or sell a currency pair at a given time. Automated forex trading uses a computer program that the trader configures to make decisions based on a set of rules. The biggest advantage of forex trading systems is that they take the emotion out of the process, which tends to reduce the behavioral finance biases that negatively impact investment decision making. Traders can also backtest trading system to see how they perform based on past data.</p>
+<h2 id="MetaTrader"><a href="#MetaTrader" class="headerlink" title="MetaTrader"></a>MetaTrader</h2><p>MetaQuotes’ <a href="https://www.metaquotes.net" title="MetaTrader" target="_blank" rel="noopener">MetaTrader</a> is undoubtedly the most popular software for online trading available for free. It is primarily used for Forex market trading. MetaTrader uses its own proprietary MetaQuotes Language (MQL) designed for developing automated trading robots, technical market indicators, scripts and function libraries within the MetaTrader software. It can be downloaded for free from the official website and through most <a href="https://admiralmarkets.com/trading-platforms" title="Admiral Markets" target="_blank" rel="noopener">Brokers’ websites</a>.</p>
+<p><img src="/images/pasted-18.png" alt="MetaTrader Screenshot"></p>
+<p>Metatrader also comes with the ability to download example code from the online community for free. Simply right click on “Scripts” and press “Online Library”.</p>
+<p><img src="/images/pasted-17.png" alt="MetaTrader Community Examples"></p>
+<p>This will then display a list of examples available to download. These examples can be executed and also modified.</p>
+<p><img src="/images/pasted-19.png" alt="MetaTrader Community list"></p>
+<p>To modify the examples they can be easily loaded in to the MetaEditor tool. This will show the code which can be modified, compiled and executed.</p>
+<p><img src="/images/pasted-20.png" alt="MetaEditor Example"></p>
+<h2 id="JForex"><a href="#JForex" class="headerlink" title="JForex"></a>JForex</h2><p>Dukascopy is a broker that also provide their clients with their own <a href="https://www.dukascopy.com" title="JForex" target="_blank" rel="noopener">JForex trading platform</a>. JForex is a free software for manual and automated trading and/or developing and testing trading strategies based on the Java programming language. Dukascopy provide a sample Java project that can be imported directly into Eclipse for developing automated trading strategies.</p>
+<p><img src="/images/pasted-13.png" alt="JForex Eclipse Project"></p>
+<p>The JForex platform tool also comes with its own lightweight integrated development environment for editing and compiling strategies in Java. </p>
+<p><img src="/images/pasted-14.png" alt="JForex Platform Tool"></p>
+<p>Dukascopy also runs a <a href="https://www.dukascopy.com/strategycontest/?language=en" title="Dukascopy Strategy Contest" target="_blank" rel="noopener">monthly strategy contest</a> for the best performing trading strategies. The historical submissions can be easily downloaded through the website or through JForex Platform Tool by navigating to the “Strategies” tab and pressing the folder icon.</p>
+<p><img src="/images/pasted-15.png" alt="JForex Strategy Competition"></p>
+<p>Note that a lot of these strategies may have been created with the assistance of the <a href="https://www.dukascopy.com/vjforex/" title="VisualJforex web tool" target="_blank" rel="noopener">VisualJforex web tool</a> so a visual strategies’ source code may be difficult to understand as it is automatically generated by the VisualJforex software.</p>
+<p><img src="/images/pasted-16.png" alt="VisualJForex Tool"></p>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>Both MetaTrader and JForex have the ability to create trading robots (strategies). These robots can be backtested locally using historical financial data, or alternatively they can be backtested online in your Broker’s account using either simulated money with a demo account or real money with a live account. The main difference is that the simulated money does not impact on the simulated financial market, whereas using real money impacts supply and demand, and as a result, the price.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>These tools give software developers the tools to trade (and even sometimes profit) on the Forex market. There are examples available in both tools and Brokers often offer a demo account to run simulations for free.</p>
+
+	
+	</div>
+	<!--footer class="article-footer">
+	
+		
+	<!--%- partial('post/tag') %-->
+	
+</div>
+
+	<!--%- partial('post/nav') %-->
+
+</article>
+        	</main>
+		</div>
+	</div>
+	<!--footer class="blog-footer">
+		<div class="container">
+			<div id="footer-info" class="inner">
+				&copy; 2019 Hugh Pearse<br>
+				<a href="https://github.com/azigler/hexo-theme-space-cadet" target="_blank">Space Cadet</a><br>
+				Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+			</div>
+		</div>
+		<a href="#top">Back to top</a>
+	</footer-->
+	<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/popper.min.js"></script>
+
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

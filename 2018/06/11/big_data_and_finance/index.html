@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<meta name="description" content="Hugh Pearse, Software Developer, Dublin Ireland">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Big data and finance (Cloudera &amp; SEC Filings) | Hugh Pearse</title>
+	<meta name="author" content="Hugh Pearse">
+	<link rel="canonical" href="https://hughpearse.github.io/2018/06/11/big_data_and_finance/">
+	<meta name="description" content="IntroductionInvestors are often asking the question: what is my next big investment? To answer this question investors have developed techniques for identifying good stocks. Some investors rely on tip">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Big data and finance (Cloudera &amp; SEC Filings) | Hugh Pearse">
+	<meta property="og:url" content="https://hughpearse.github.io/2018/06/11/big_data_and_finance/">
+	<meta property="og:site_name" content="Hugh Pearse">
+	<meta property="article:published_time" content="2018-06-11T11:00:00.000Z">
+	<meta property="og:description" content="IntroductionInvestors are often asking the question: what is my next big investment? To answer this question investors have developed techniques for identifying good stocks. Some investors rely on tip">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://hughpearse.github.io/images/pasted-0.png?1558547230685">
+	<meta property="og:updated_time" content="2019-05-22T16:17:51.603Z">
+	<meta property="article:modified_time" content="2019-05-22T16:17:51.603Z">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Big data and finance (Cloudera &amp; SEC Filings) | Hugh Pearse">
+	<meta name="twitter:description" content="IntroductionInvestors are often asking the question: what is my next big investment? To answer this question investors have developed techniques for identifying good stocks. Some investors rely on tip">
+	<meta name="twitter:image" content="https://hughpearse.github.io/images/pasted-0.png?1558547230685">
+	
+	
+		<link rel="icon" href="/favicon.ico?2019-05-22T17:47:10.686Z">
+	
+	
+		<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	
+		<!--link href="/css/css?family=Source+Code+Pro|Jura" rel="stylesheet" type="text/css"-->
+	
+	<link rel="stylesheet" href="/css/style.css?2019-05-22T17:47:10.686Z">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121349637-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-121349637-1');
+	</script>
+</head>
+<body>
+	<a name="top"></a>
+	<header>
+		
+	</header>
+	<div class="container bg-white pt-3 p-3 mt-3 mb-3">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#theme-navigation" aria-controls="theme-navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="theme-navigation">
+			<a class="navbar-brand" href>Weblog</a>
+				<div class="navbar-collapse">
+					<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link " href="/">
+									Home
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/archives/">
+									Archive
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://www.linkedin.com/in/hughpearse/">
+									LinkedIn
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://github.com/hughpearse">
+									Github
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/about">
+									About
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/references">
+									References
+								</a>
+							</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="blog-header container" style="text-align: center;">
+			<a href="/">
+				<h1 class="blog-title">Hugh Pearse</h1>
+			</a>
+	
+		</div>
+	    <div class="row">
+        	<main class="blog-main px-2" style="max-width: 100%;">
+        		<article id="post-big_data_and_finance" class="article article-type-post blog-post" itemscope itemtype="http://schema.org/Article">
+<header class="article-header text-center">
+
+	<span itemprop="mainEntityOfPage">
+		<h1 class=" blog-post-title" itemprop="name headline">
+			Big data and finance (Cloudera &amp; SEC Filings)
+		</h1>
+	</span>
+
+</header>
+<div class="article-meta blog-post-meta text-center">
+	
+
+
+	<div class="article-datetime">
+	<time datetime="2018-06-11T11:00:00.000Z" itemprop="datePublished" content="2018-06-11T11:00:00.000Z">2018-06-11</time>
+	<time datetime="2018-06-11T11:00:00.000Z">12:00:00</time><span itemprop="dateModified" content="2019-05-22T16:17:51.603Z>" < span>
+	</span></div>
+
+	
+		<div class="article-author">
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<span itemprop="name" content="Hugh Pearse">
+				</span>
+			</span>
+			<span itemtype="https://schema.org/Organization" itemscope="itemscope" itemprop="publisher">
+				<span itemprop="name">
+					Hugh Pearse
+				</span>
+				<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content>
+				</span>
+				</span>
+			
+		</div>
+	
+	
+	</div>
+
+<div class="article-inner">
+	
+<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+	<meta itemprop="url" content>
+</div>
+<div class="article-entry" itemprop="articleBody">
+	
+		<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Investors are often asking the question: what is my next big investment? To answer this question investors have developed techniques for identifying good stocks. Some investors rely on tips, others rely on hard data. How can an investor use hard data to select a stock?</p>
+<h2 id="EDGAR"><a href="#EDGAR" class="headerlink" title="EDGAR"></a>EDGAR</h2><p>All publicly traded companies in the U.S. are required by the Security and Exchange Commission (SEC) to file registration statements, periodic reports, and other forms electronically through a system called EDGAR. All of this financial information is made accessible to the public <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001081316&amp;owner=exclude&amp;count=40&amp;hidefilings=0" title="EDGAR Online (Berkshire Hathaway)" target="_blank" rel="noopener">through the EDGAR page</a> on the SEC website.</p>
+<h2 id="Form-Types-Overview"><a href="#Form-Types-Overview" class="headerlink" title="Form Types Overview"></a>Form Types Overview</h2><p>There are several document types available through EDGAR such as 10K, 10Q, 8K, 20F, 40F, S-1 etc.The 10-K form describes the financial condition and performance of a company for an annual period. The 10-Q form reports the financial condition of a company for a quarterly period and it generally contains unaudited financial statements.</p>
+<h2 id="U-S-GAAP"><a href="#U-S-GAAP" class="headerlink" title="U.S. GAAP"></a>U.S. GAAP</h2><p>GAAP (Generally Accepted Accounting Principles) is the accounting standard adopted by the SEC. GAAP are a set of rules that encompass the details, complexities, and legalities of business and corporate accounting. U.S. law requires businesses that release financial statements to the public and companies that are publicly traded on stock exchanges and indices to follow GAAP guidelines.</p>
+<h2 id="Stock-Screeners"><a href="#Stock-Screeners" class="headerlink" title="Stock Screeners"></a>Stock Screeners</h2><p>Stock screeners are specialized search engines to query financial data to help investors filter stocks based on a search criteria. Screeners contain common pre-written queries for ratios between fields in a companies accounts. Screeners allows investors to cut down the vast number of traded stocks to a small number that meet a specific criteria. <a href="https://investing.com/stock-screener/" title="Stock screener" target="_blank" rel="noopener">Free screeners are available online</a> but are limited in the types of queries that can be run and are normally limited to the most recent financial period. Screeners that allow investors to build complex queries against historical data usually charge a fee to use.</p>
+<p><img src="/images/pasted-0.png" alt="Example stock screener"></p>
+<h2 id="XBRL-Document-Format"><a href="#XBRL-Document-Format" class="headerlink" title="XBRL Document Format"></a>XBRL Document Format</h2><p>The EDGAR submissions are given in eXtensible Business Reporting Language (XBRL) tagged document format. The tagging is done using the latest XBRL taxonomy developed by the Financial Accounting Standards Board (FASB) and which is accepted by the SEC. This means all data found on EDGAR can be automatically queried using widely agreed upon reference codes.</p>
+<h2 id="Data-Sets"><a href="#Data-Sets" class="headerlink" title="Data Sets"></a>Data Sets</h2><p>The SEC has made all XBRL submissions since 2009 available to <a href="https://www.sec.gov/dera/data/financial-statement-data-sets.html" title="Financial Statement Data Sets" target="_blank" rel="noopener">download on their website</a>. The information is presented without change from the “as filed” financial reports submitted by each registrant. The data is presented in a flattened format to help users analyze and compare corporate disclosure information over time and across registrants. The XBRL data is provided in a flattened data format to assist users in more easily consuming the data for analysis. The data is published on a quarterly basis in a zip file. Inside each zip file is a README file plus 4 data tables in tab-delimited CSV. The files are linked together with foreign-keys.</p>
+<ul>
+<li>readme.htm - general information describing the dataset</li>
+<li>sub.txt - Submission data set; this includes one record for each XBRL submission</li>
+<li>num.txt - Number data set; this includes one row for each distinct amount from each submission included in the SUB data set.</li>
+<li>tag.txt - Tag data set; includes tag definitions,  descriptions (documentation labels), taxonomy version information and other attributes</li>
+<li>pre.txt - Presentation data set; this provides information about how the tags and numbers were presented in the primary financial statements</li>
+</ul>
+<h2 id="Stock-price-data-sets"><a href="#Stock-price-data-sets" class="headerlink" title="Stock price data sets"></a>Stock price data sets</h2><p>High-resolution historical stock price data is expensive to acquire and is therefore <a href="http://quant.caltech.edu/historical-stock-data.html" title="Historical stock price data" target="_blank" rel="noopener">rarely shared for free</a>. QuantQuote offers free daily resolution data for the S&amp;P500 on its web site under the Free Data tab. The data accounts for symbol changes, splits, and dividends, and is largely free of the errors found in the Yahoo data. Note, only 500 symbols are available unlike Yahoo which provides all listed symbols.</p>
+<p>Websites such as Yahoo Finance allow you to download historical price data for free, but there are several problems. The data is not usually of very high quality as there can be mistakes. Additionally the API’s usualy require users to search by ticker symbol.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl <span class="string">'https://query1.finance.yahoo.com/v7/finance/download/KO?period1=1230768000&amp;period2=1529017200&amp;interval=1mo&amp;events=history'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Cloudera-VM"><a href="#Cloudera-VM" class="headerlink" title="Cloudera VM"></a>Cloudera VM</h2><p>Cloudera QuickStart virtual machine (VM) include all the the open source software you need for use right out of the box including tools such as Hadoop, Spark, Hue, Impala and Hive. Hue can be used for <a href="http://gethue.com/hadoop-tutorial-create-hive-tables-with-headers-and/" title="Create Hive tables with headers and load quoted CSV data" target="_blank" rel="noopener">mapping csv files to data tables in Hive</a>. Impala can then be used to <a href="https://www.cloudera.com/documentation/enterprise/latest/topics/hue.html" title="Impala Query Results in Hue" target="_blank" rel="noopener">query data in Hive</a>. This can be quickly configured in a few clicks and will allow you to run complex SQL queries against the data. </p>
+<h3 id="Step-1-Download-the-data"><a href="#Step-1-Download-the-data" class="headerlink" title="Step 1: Download the data"></a>Step 1: Download the data</h3><p>Open Cloudera VM<br>Open firefox<br>Download a financial data set zip file from the SEC website</p>
+<p><img src="/images/pasted-1.png" alt="SEC XBRL data"></p>
+<h3 id="Step-2-Import-the-data"><a href="#Step-2-Import-the-data" class="headerlink" title="Step 2: Import the data"></a>Step 2: Import the data</h3><p>Extract the zip file<br>Navigate to the Hue web application <a href="http://localhost:8888/hue/" target="_blank" rel="noopener">http://localhost:8888/hue/</a> and log in with the default username “cloudera” and password “cloudera”<br>In Hue on the top left press -&gt; hamburger menu -&gt; Browsers -&gt; Files -&gt; Upload -&gt; Files -&gt; Select Files<br>Select all the txt files you downloaded previously and upload them.</p>
+<p><img src="/images/pasted-2.png" alt="Import CSV files view"></p>
+<h3 id="Step-3-Create-a-table"><a href="#Step-3-Create-a-table" class="headerlink" title="Step 3: Create a table"></a>Step 3: Create a table</h3><p>Before importing the files you will need to modify the HDFS folder permissions to import the files to a table. To do this open the command prompt and execute the following command.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hdfs dfs –chmod -R 666 hdfs://localhost:8020/user/cloudera/</span><br></pre></td></tr></table></figure>
+<p>You can now progress to import the files to a table. In Hue on the top left press -&gt; hamburger menu -&gt; Browsers -&gt; Tables -&gt; Plus Icon (+)</p>
+<p><img src="/images/pasted-3.png" alt="Empty tables view"></p>
+<p>Then set “Type: File” and “Path: /user/cloudera/num.txt”<br>Then press “Next”</p>
+<p><img src="/images/pasted-4.png" alt="Importing a table from a CSV file, part 1"></p>
+<p>Then leave the default data types detected for the columns and press “Submit”</p>
+<p><img src="/images/pasted-5.png" alt="Importing a table from a CSV file, part 2"></p>
+<p>Then the table will be created and will appear on the left pane</p>
+<p><img src="/images/pasted-6.png" alt="Importing a table from a CSV file, part 3"></p>
+<p>Repeat the steps above for the other files. Once that is completed you should see 4 tables in the default table schema: num, sub, tag and pre.</p>
+<p><img src="/images/pasted-7.png" alt="All tables created"></p>
+<p>You should now be able to see these tables in the impala shell. Open the terminal and run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ impala-shell</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-25.png" alt="impala-shell"></p>
+<p>To list the databases in impala run the show databases command:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; show databases;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-26.png" alt="show databases"></p>
+<p>To list the tables in the default database run the show tables command:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; show tables in default;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-27.png" alt="show tables command"></p>
+<p>To choose a database as a context for subsequent sql commands, issue the use database command:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; use default;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-28.png" alt="use database command"></p>
+<p>Tables are the primary containers for data in Impala. Logically, each table has a structure based on the definition of its columns, partitions, and other properties.</p>
+<p>Physically, each table that uses HDFS storage is associated with a directory in HDFS. The table data consists of all the data files underneath that directory:</p>
+<ul>
+<li>Internal tables are managed by Impala, and use directories inside the designated Impala work area.</li>
+<li>External tables use arbitrary HDFS directories, where the data files are typically shared between different Hadoop components.</li>
+<li>Large-scale data is usually handled by partitioned tables, where the data files are divided among different HDFS subdirectories.</li>
+</ul>
+<p>To query what type table we have created in impala, run the describe formatted command:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; describe formatted tag;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-29.png" alt="describe formatted command"><br>The Table Type field displays MANAGED_TABLE for internal tables and EXTERNAL_TABLE for external tables. </p>
+<h2 id="Performing-a-simple-query"><a href="#Performing-a-simple-query" class="headerlink" title="Performing a simple query"></a>Performing a simple query</h2><p>Cloudera provides a SQL based web interface to query the data in Hive using Impala. Hue includes a SQL query interface under Hue -&gt; Hamburger Menu -&gt; Apps -&gt; Editor. In this page you can enter queries to retrieve your data from database tables. A simple query might be: select values from a balance sheet:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, num.tag, <span class="keyword">value</span>, <span class="keyword">form</span>, ddate <span class="keyword">from</span> sub <span class="keyword">right</span> <span class="keyword">join</span> <span class="keyword">num</span> <span class="keyword">on</span> </span><br><span class="line">sub.adsh = num.adsh <span class="keyword">right</span> <span class="keyword">join</span> pre <span class="keyword">on</span> num.adsh = pre.adsh <span class="keyword">and</span> </span><br><span class="line">num.tag = pre.tag <span class="keyword">and</span> num.version = pre.verison <span class="keyword">where</span> cik=<span class="number">1081316</span> <span class="keyword">and</span> </span><br><span class="line">coreg=<span class="string">""</span> <span class="keyword">and</span> ddate&gt;=<span class="number">20170000</span> <span class="keyword">and</span> stmt=<span class="string">"BS"</span> <span class="keyword">and</span> (num.tag=<span class="string">"Assets"</span> <span class="keyword">or</span></span><br><span class="line">num.tag=<span class="string">"Liabilities"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes:"></a>Notes:</h3><ol>
+<li>CIK# 1081316 refers to Berkshire Hathaway Energy Co</li>
+<li>When we specify a condition: num.tag=”Liabilities”, this refers to the XBRL code to specify the US GAAP entry. This can be found through the SEC website on interactive documents, which will allow you to click on cell values in their accounts to display the relevant GAAP code.</li>
+</ol>
+<p>Once your query is ready, to run it press the triangular play button on the left of the textarea.</p>
+<p><img src="/images/pasted-8.png" alt="SQL Query"></p>
+<p>As mentioned previously, the SEC XBRL data can be queried using widely agreed upon reference codes. Finding these is straightforward. Navigate to the EDGAR website. In the “Company Name” search input a value, or alternatively in the fast search input a CIK# and press “Search”. This will display the forms a company has submitted to EDGAR.</p>
+<p><img src="/images/pasted-9.png" alt="Forms view EDGAR"></p>
+<p>Some documents are available in “Interactive Mode” and are signified by a blue button.</p>
+<p><img src="/images/pasted-10.png" alt="Viewing a 10-K form"></p>
+<p>Opening a 10-K form in interactive mode allows you to go through the submission including documents such as Income Statement, Cash Flow Statement and Balance Sheet.</p>
+<p><img src="/images/pasted-11.png" alt="Viewing XBRL reference codes"></p>
+<p>Open a balance sheet and click on one of the fields. If the document is open in interactive mode it will display a popup. Drill down into the “Details” submenu of the popup and you can see fields such as “Name”, “Namespace Prefix” and “Data Type”. </p>
+<ul>
+<li>Name: us-gaap_Assets</li>
+<li>Namespace Prefix: us-gaap_</li>
+<li>Data Type: xbrli:monetaryItemType</li>
+<li>Balance Type: debit</li>
+<li>Period Type: instant</li>
+</ul>
+<p>By subtracting the Namespace Prefix from the Name field, we are left with the value “Assets”. This is the Name suffix, which corresponds to the table column num.tag.</p>
+<h2 id="Extracting-Ticker-Symbols"><a href="#Extracting-Ticker-Symbols" class="headerlink" title="Extracting Ticker Symbols"></a>Extracting Ticker Symbols</h2><p>In the EDGAR dataset there are 2 columns of interest: sub.cik and sub.instance. The sub.instance column contains the filename submitted to the SEC which has a prefix of the ticker symbol. This data can be queried with SQL.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, sub.cik, sub.instance <span class="keyword">from</span> sub </span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> <span class="keyword">num</span> <span class="keyword">on</span> sub.adsh = num.adsh </span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> pre <span class="keyword">on</span> num.adsh = pre.adsh <span class="keyword">and</span> </span><br><span class="line">num.tag = pre.tag <span class="keyword">and</span> num.version = pre.verison <span class="keyword">where</span> cik=<span class="number">21344</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-21.png" alt="Ticker with suffix"></p>
+<p>The suffix can easily be removed to extract the ticker symbol. This can be done easily in SQL.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, sub.cik, split_part(sub.instance, <span class="string">"-"</span>, <span class="number">1</span>) <span class="keyword">as</span> Ticker </span><br><span class="line"><span class="keyword">from</span> sub </span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> <span class="keyword">num</span> <span class="keyword">on</span> sub.adsh = num.adsh </span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> pre <span class="keyword">on</span> num.adsh = pre.adsh <span class="keyword">and</span> </span><br><span class="line">num.tag = pre.tag <span class="keyword">and</span> </span><br><span class="line">num.version = pre.verison <span class="keyword">where</span> cik=<span class="number">21344</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-22.png" alt="Extracted ticker"></p>
+<p>You can then use this to download the appropriate historical price data from Yahoo or another third party service. There are however some issues with this. This may cause issues if a company has changed it’s ticker symbol during it’s time as a publicly traded company. </p>
+<h2 id="Yahoo-Price-Data"><a href="#Yahoo-Price-Data" class="headerlink" title="Yahoo Price Data"></a>Yahoo Price Data</h2><p>Yahoo have made their price data freely available to download in CSV format. To map this to the EDGAR data, the least granular time period can be used (monthly), and the time scale can be from 2009-present, as the EDGAR data only goes back as far as 2009. Perform a simple search for <a href="https://finance.yahoo.com/quote/ko/history/" title="Coca Cola Price History" target="_blank" rel="noopener">Coca Cola</a>.</p>
+<p><img src="/images/pasted-23.png" alt="Historical Price Data Yahoo Search"></p>
+<p>Once this is downloaded it will be in CSV format, this can be imported to a KO table and the rows can be joined using their date columns.</p>
+<p><img src="/images/pasted-24.png" alt="Price Data CSV"></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>It is possible to perform detailed research of historical company performance on a large scale, and also include the price information. This can all be done at home for free with out the need for any special resources that are not already available for free on the internet. The process of downloading the price data for all ticker symbols can probably be automated using a bash script, but that will not be covered here.</p>
+
+	
+	</div>
+	<!--footer class="article-footer">
+	
+		
+	<!--%- partial('post/tag') %-->
+	
+</div>
+
+	<!--%- partial('post/nav') %-->
+
+</article>
+        	</main>
+		</div>
+	</div>
+	<!--footer class="blog-footer">
+		<div class="container">
+			<div id="footer-info" class="inner">
+				&copy; 2019 Hugh Pearse<br>
+				<a href="https://github.com/azigler/hexo-theme-space-cadet" target="_blank">Space Cadet</a><br>
+				Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+			</div>
+		</div>
+		<a href="#top">Back to top</a>
+	</footer-->
+	<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/popper.min.js"></script>
+
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

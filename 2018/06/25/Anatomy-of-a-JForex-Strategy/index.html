@@ -1,0 +1,220 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<meta name="description" content="Hugh Pearse, Software Developer, Dublin Ireland">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Anatomy of a JForex Strategy | Hugh Pearse</title>
+	<meta name="author" content="Hugh Pearse">
+	<link rel="canonical" href="https://hughpearse.github.io/2018/06/25/Anatomy-of-a-JForex-Strategy/">
+	<meta name="description" content="Prior ArtBefore writing this I would like to highlight that a very good description of JForex strategies has been explained on the Quantasian website here, here and here. IntroductionJForex strategy p">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Anatomy of a JForex Strategy | Hugh Pearse">
+	<meta property="og:url" content="https://hughpearse.github.io/2018/06/25/Anatomy-of-a-JForex-Strategy/">
+	<meta property="og:site_name" content="Hugh Pearse">
+	<meta property="article:published_time" content="2018-06-25T18:31:01.000Z">
+	<meta property="og:description" content="Prior ArtBefore writing this I would like to highlight that a very good description of JForex strategies has been explained on the Quantasian website here, here and here. IntroductionJForex strategy p">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="?1558547230644">
+	<meta property="og:updated_time" content="2019-05-22T16:17:51.602Z">
+	<meta property="article:modified_time" content="2019-05-22T16:17:51.602Z">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Anatomy of a JForex Strategy | Hugh Pearse">
+	<meta name="twitter:description" content="Prior ArtBefore writing this I would like to highlight that a very good description of JForex strategies has been explained on the Quantasian website here, here and here. IntroductionJForex strategy p">
+	<meta name="twitter:image" content="?1558547230645">
+	
+	
+		<link rel="icon" href="/favicon.ico?2019-05-22T17:47:10.645Z">
+	
+	
+		<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	
+		<!--link href="/css/css?family=Source+Code+Pro|Jura" rel="stylesheet" type="text/css"-->
+	
+	<link rel="stylesheet" href="/css/style.css?2019-05-22T17:47:10.645Z">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121349637-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-121349637-1');
+	</script>
+</head>
+<body>
+	<a name="top"></a>
+	<header>
+		
+	</header>
+	<div class="container bg-white pt-3 p-3 mt-3 mb-3">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#theme-navigation" aria-controls="theme-navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="theme-navigation">
+			<a class="navbar-brand" href>Weblog</a>
+				<div class="navbar-collapse">
+					<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link " href="/">
+									Home
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/archives/">
+									Archive
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://www.linkedin.com/in/hughpearse/">
+									LinkedIn
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="https://github.com/hughpearse">
+									Github
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/about">
+									About
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="/references">
+									References
+								</a>
+							</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="blog-header container" style="text-align: center;">
+			<a href="/">
+				<h1 class="blog-title">Hugh Pearse</h1>
+			</a>
+	
+		</div>
+	    <div class="row">
+        	<main class="blog-main px-2" style="max-width: 100%;">
+        		<article id="post-Anatomy-of-a-JForex-Strategy" class="article article-type-post blog-post" itemscope itemtype="http://schema.org/Article">
+<header class="article-header text-center">
+
+	<span itemprop="mainEntityOfPage">
+		<h1 class=" blog-post-title" itemprop="name headline">
+			Anatomy of a JForex Strategy
+		</h1>
+	</span>
+
+</header>
+<div class="article-meta blog-post-meta text-center">
+	
+
+
+	<div class="article-datetime">
+	<time datetime="2018-06-25T18:31:01.000Z" itemprop="datePublished" content="2018-06-25T18:31:01.000Z">2018-06-25</time>
+	<time datetime="2018-06-25T18:31:01.000Z">19:31:01</time><span itemprop="dateModified" content="2019-05-22T16:17:51.602Z>" < span>
+	</span></div>
+
+	
+		<div class="article-author">
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<span itemprop="name" content="Hugh Pearse">
+				</span>
+			</span>
+			<span itemtype="https://schema.org/Organization" itemscope="itemscope" itemprop="publisher">
+				<span itemprop="name">
+					Hugh Pearse
+				</span>
+				<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content>
+				</span>
+				</span>
+			
+		</div>
+	
+	
+	</div>
+
+<div class="article-inner">
+	
+<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+	<meta itemprop="url" content>
+</div>
+<div class="article-entry" itemprop="articleBody">
+	
+		<h2 id="Prior-Art"><a href="#Prior-Art" class="headerlink" title="Prior Art"></a>Prior Art</h2><p>Before writing this I would like to highlight that a very good description of JForex strategies has been explained on the Quantasian website <a href="https://www.quantisan.com/getting-started-learning-jforex-programming/" title="Quantisan JForex 1" target="_blank" rel="noopener">here</a>, <a href="https://www.quantisan.com/anatomy-of-a-jforex-strategy-part-1/" title="Quantisan JForex 2" target="_blank" rel="noopener">here</a> and <a href="https://www.quantisan.com/anatomy-of-a-jforex-strategy-part-2/" title="Quantisan JForex 3" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>JForex strategy programming involves writing a single java class. The JForex API provides an interface called “com.dukascopy.api.IStrategy”. All strategies must be an implementation class for the IStrategy interface. The IStrategy interface contains a list of public methods which all strategies should implement: </p>
+<ul>
+<li>onStart</li>
+<li>onTick</li>
+<li>onBar</li>
+<li>onAccount</li>
+<li>onMessage</li>
+<li>onStop</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dukascopy.api.*; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmptyStrategy</span> <span class="keyword">implements</span> <span class="title">IStrategy</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">(IContext context)</span> <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTick</span><span class="params">(Instrument instrument, ITick tick)</span> <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBar</span><span class="params">(Instrument instrument, Period period, IBar askBar, IBar bidBar)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessage</span><span class="params">(IMessage message)</span> <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAccount</span><span class="params">(IAccount account)</span> <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> <span class="keyword">throws</span> JFException </span>&#123; &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Strategy-onStart-method"><a href="#Strategy-onStart-method" class="headerlink" title="Strategy onStart method"></a>Strategy onStart method</h2><p>This is the first method that is called when the execution environment calls your strategy and is only called once at the very beginning. The onStart method expects an IContext object as a parameter. This object is a core JForex object and a gateway to access many important components of the JForex system such as the ordering engine, charts, console, indicators etc. When onStart is called it is the only time that this object will be set.</p>
+<h2 id="Strategy-onTick-method"><a href="#Strategy-onTick-method" class="headerlink" title="Strategy onTick method"></a>Strategy onTick method</h2><p>This method is called for each and every instrument that your JForex execution environment is subscribed to. A tick denotes a market’s smallest possible price movement. A price change from 1.2345 to 1.2346 would represent one tick. Some markets might measure price movements in minimum increments of 0.25. So for them a price change from 450.00 to 450.25 is a tick. The method expect 2 parameters: an Instrument and an ITick. The Instrument object allows you to detect at runtime which currency pair is being referenced in the ITick object. And the ITick object allows you to access the price and volume information for that instrument. The onTick method is usually where the buying and selling happens.</p>
+<h2 id="Strategy-onBar-method"><a href="#Strategy-onBar-method" class="headerlink" title="Strategy onBar method"></a>Strategy onBar method</h2><p>onBar is similar to onTick. OnBar is called for every subscribed instrument, but with an extra dimension: onBar is also called for every time period. onBar expects 4 parameters: Instrument, Period, IBar and another IBar. The Instrument object contains information so that you can detect at runtime which currency pair is being referenced in the other parameters. The Period object describes the period of time being used to calculate the buying and selling prices in the IBar objects (1 minute, 1 day etc). The bid IBar contains the price information stating the price people are willing to pay, and the volume stating how many people are willing to pay it. The ask IBar is similar to the bid IBar, except the ask IBar has information about what people are selling. You are probably wondering what happens when multiple time periods overlap. The methods are simply called multiple times. For example for time periods 1, 2, 5, 10 it would be called as follows: 1min [1min 2min] 1min [1min 2min] [1min 5min] [1min 2min] 1min [1min 2min] 1min [1min 2min 5min 10min].</p>
+<h2 id="Strategy-onMessage-method"><a href="#Strategy-onMessage-method" class="headerlink" title="Strategy onMessage method"></a>Strategy onMessage method</h2><p>This method is called when the Dukascopy server sends your strategy a message such as letting you know that your order has been filled. Messages sent are not guaranteed to be received. They are sent once from the server to your strategy and if for whatever reason they are not received, then they are simply discarded. The onMessage object expects an IMessage object. The IMessage object contains things like message type, message reason, related order.</p>
+<h2 id="Strategy-onAccount-method"><a href="#Strategy-onAccount-method" class="headerlink" title="Strategy onAccount method"></a>Strategy onAccount method</h2><p>This method is called irregularly and only when your account update information is received. The IAccount object is not connected live to your account in the server. It is just a snapshot in time of your account information. For example, if you keep a local copy of an IAccount object within the scope of the strategy. Do some trading to change your balance. Then ask the same IAccount for account balance information, you will not see a change. This is why you should always update your strategies’ local copy of the IAccount object instance from within the onAccount method.</p>
+<h2 id="Strategy-onStop-method"><a href="#Strategy-onStop-method" class="headerlink" title="Strategy onStop method"></a>Strategy onStop method</h2><p>This method is called once the strategy receives a stop command. You can use this to perform a clean up when the strategy is closing.</p>
+<h2 id="Filtering"><a href="#Filtering" class="headerlink" title="Filtering"></a>Filtering</h2><p>Filters are usually placed in the onTick and onBar methods. The standard practice is to filter out method calls for periods or instruments that you don’t want with a simple if-true-return statement. For example if your execution environment is subscribed to 2 instruments, and you have seperate strategies for each instrument, you might include a filter such as this:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!instrument.equals(selectedInstrument)) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Or if your strategy only allowed maximum 1 order open at a time you might have something like this:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!engine.getOrders(selectedInstrument).isEmpty()) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JForex-Eclipse-Project"><a href="#JForex-Eclipse-Project" class="headerlink" title="JForex Eclipse Project"></a>JForex Eclipse Project</h2><p>Dukascopy have made available a <a href="https://www.dukascopy.com/wiki/en/development/get-started-api/use-jforex-sdk/download-jforex-sdk" title="JForex SDK" target="_blank" rel="noopener">JForex Software Development Kit</a> (JForex SDK) allows the user to use JForex API without JForex client. This is an eclipse project that can be downloaded from the Dukascopy website. The JForex SDK has an example class JFOREX-3-SDK/src/singlejartest/Main.java which is a test execution container for backtesting strategies. Main.java calls an example strategy called MA_Play.java. When the execution container is started it calls client.startStrategy() which in turn calls the public methods in your class that implement the methods of the IStrategy interface.</p>
+<h2 id="Subscribing-to-Instruments"><a href="#Subscribing-to-Instruments" class="headerlink" title="Subscribing to Instruments"></a>Subscribing to Instruments</h2><p>In order for an instrument to be passed as a parameter to a strategy’s onTick() method the execution environment must have the instruments configured first. In the Main.java file in the JForex SDK there is an example method called <a href="https://www.dukascopy.com/client/javadoc/com/dukascopy/api/system/IClient.html#setSubscribedInstruments(java.util.Set)" title="Set subscribed instruments" target="_blank" rel="noopener">subscribeToInstruments()</a> which will inform the execution environment which instruments’ tick data to use. JForex downloads this tick data on-the-fly based on the time period being used. An example of this might be:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Instrument&gt; instruments = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">instruments.add(Instrument.EURUSD);</span><br><span class="line">client.setSubscribedInstruments(instruments);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Backtesting-Specific-Time-Periods"><a href="#Backtesting-Specific-Time-Periods" class="headerlink" title="Backtesting Specific Time Periods"></a>Backtesting Specific Time Periods</h2><p>It is possible to test a strategy with data from a specific time period from within the driver class Main.java. This can be done by making a call to the <a href="https://www.dukascopy.com/client/javadoc/com/dukascopy/api/system/ITesterClient.html#setDataInterval(com.dukascopy.api.system.ITesterClient.DataLoadingMethod,%20long,%20long)" title="Set backtesting period" target="_blank" rel="noopener">client.setDataInterval()</a> method. This method sets the DataLoadingMethod to use for ticks generation and time interval when to start and end testing process. This method expects 3 parameters: dataLoadingMethod, from, to. The parameter dataLoadingMethod lets you specify which type of data to load. The “from” and “to” parameters allow you to configure the time range. An example of this might be:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.setDataInterval(DataLoadingMethod.ALL_TICKS, dateFrom.getTime(), dateTo.getTime());</span><br></pre></td></tr></table></figure></p>
+<h2 id="Starting-Money"><a href="#Starting-Money" class="headerlink" title="Starting Money"></a>Starting Money</h2><p>It is also possible to configure the starting cash of a strategy from the Main.java class by making a call to <a href="https://www.dukascopy.com/client/javadoc/com/dukascopy/api/system/ITesterClient.html#setInitialDeposit(com.dukascopy.api.ICurrency,%20double)" title="Set initial deposit" target="_blank" rel="noopener">client.setInitialDeposit()</a>. An example of this might be:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.setInitialDeposit(Instrument.EURUSD.getSecondaryJFCurrency(), <span class="number">100000</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Placing-an-Order"><a href="#Placing-an-Order" class="headerlink" title="Placing an Order"></a>Placing an Order</h2><p>In the onTick method in the MA_Play strategy placing a market order is as simple as calling the <a href="https://www.dukascopy.com/client/javadoc/com/dukascopy/api/IEngine.html#submitOrder(java.lang.String,%20com.dukascopy.api.Instrument,%20com.dukascopy.api.IEngine.OrderCommand,%20double)" title="Order API" target="_blank" rel="noopener">engine.submitOrder()</a> method. The submitOrder method has a few overloaded variations. The simplest is a market order. A market order has 4 parameters: label, instrument, orderCommand and amount.</p>
+<ul>
+<li>Label must be unique for the given user account among the current orders. Allowed characters: letters, numbers and “_”. Label must have at most 256 characters.</li>
+<li>Instrument is the currency pair to be bought/sold</li>
+<li>orderCommand is the type of order BUY/SELL</li>
+<li>amount is the amount in millions for the order</li>
+</ul>
+<p>Here is an example of an if statement making a market order based on a 50:50 chance.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(Math.random() &lt; <span class="number">0.5</span>)&#123;</span><br><span class="line">    engine.submitOrder(<span class="string">"Uniq_Label_BUY"</span>, selectedInstrument, IEngine.OrderCommand.BUY, <span class="number">0.0010</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    engine.submitOrder(<span class="string">"Uniq_Label_SELL"</span>, selectedInstrument, IEngine.OrderCommand.SELL, <span class="number">0.0010</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	<!--footer class="article-footer">
+	
+		
+	<!--%- partial('post/tag') %-->
+	
+</div>
+
+	<!--%- partial('post/nav') %-->
+
+</article>
+        	</main>
+		</div>
+	</div>
+	<!--footer class="blog-footer">
+		<div class="container">
+			<div id="footer-info" class="inner">
+				&copy; 2019 Hugh Pearse<br>
+				<a href="https://github.com/azigler/hexo-theme-space-cadet" target="_blank">Space Cadet</a><br>
+				Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+			</div>
+		</div>
+		<a href="#top">Back to top</a>
+	</footer-->
+	<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/popper.min.js"></script>
+
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
