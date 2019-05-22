@@ -13,13 +13,13 @@
 	<meta property="og:url" content="https://hughpearse.github.io/page/3/">
 	<meta property="og:site_name" content="Hugh Pearse">
 	<meta property="og:locale" content="en_US">
-	<meta property="og:image" content="https://hughpearse.github.io/page/3/?1558547230709">
+	<meta property="og:image" content="https://hughpearse.github.io/page/3/?1558553769655">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Hugh Pearse">
-	<meta name="twitter:image" content="https://hughpearse.github.io/page/3/?1558547230709">
+	<meta name="twitter:image" content="https://hughpearse.github.io/page/3/?1558553769655">
 	
 	
-		<link rel="icon" href="/favicon.ico?2019-05-22T17:47:10.709Z">
+		<link rel="icon" href="/favicon.ico?2019-05-22T19:36:09.655Z">
 	
 	
 		<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
@@ -27,7 +27,7 @@
 	
 		<!--link href="/css/css?family=Source+Code+Pro|Jura" rel="stylesheet" type="text/css"-->
 	
-	<link rel="stylesheet" href="/css/style.css?2019-05-22T17:47:10.709Z">
+	<link rel="stylesheet" href="/css/style.css?2019-05-22T19:36:09.655Z">
 	<link rel="stylesheet" href="/css/bootstrap.css">
 	<link rel="stylesheet" href="/css/font-awesome.min.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -98,13 +98,13 @@
         	<main class="blog-main px-2" style="max-width: 100%;">
         		
 
-	<article id="post-Automated-Forex-Trading-with-JForex" class="article article-type-post blog-post" itemscope itemtype="http://schema.org/Article">
+	<article id="post-Simple-Linear-Regression-of-EDGAR-Data-Cloudera-KNIME" class="article article-type-post blog-post" itemscope itemtype="http://schema.org/Article">
 <header class="article-header text-center">
 
 	<span itemprop="mainEntityOfPage" style="display: inline-block;">
 		<h1 itemprop="name headline" class="blog-post-title">
-			<a class href="/2018/06/15/Automated-Forex-Trading-with-JForex/">
-				Automated Forex Trading (MetaTrader &amp; JForex)
+			<a class href="/2018/06/24/Simple-Linear-Regression-of-EDGAR-Data-Cloudera-KNIME/">
+				Simple Linear Regression of EDGAR Data (Cloudera &amp; KNIME)
 			</a>
 		</h1>
 	</span>
@@ -115,8 +115,8 @@
 
 
 	<div class="article-datetime">
-	<time datetime="2018-06-15T09:01:55.000Z" itemprop="datePublished" content="2018-06-15T09:01:55.000Z">2018-06-15</time>
-	<time datetime="2018-06-15T09:01:55.000Z">10:01:55</time>
+	<time datetime="2018-06-24T10:50:00.000Z" itemprop="datePublished" content="2018-06-24T10:50:00.000Z">2018-06-24</time>
+	<time datetime="2018-06-24T10:50:00.000Z">11:50:00</time>
 	</div>
 
 	
@@ -146,33 +146,75 @@
 </div>
 <div class="article-entry" itemprop="articleBody">
 	
-		<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Foreign Exchange (forex) trading is the act of buying or selling currencies. The exchange rate is the rate at which one currency will be exchanged for another. Supply and demand for any given currency, and thus its value, are not influenced by any single element, but rather by several. </p>
-<p>Algorithmic trading is a method of executing orders using automated pre-programmed trading instructions. Most forex market trades are now performed by algorithms, not humans, and they’ve already caused <a href="https://en.wikipedia.org/wiki/Flash_crash" title="Flash Crash" target="_blank" rel="noopener">crashes</a>.</p>
-<h2 id="Foreign-Exchange-Market"><a href="#Foreign-Exchange-Market" class="headerlink" title="Foreign Exchange Market"></a>Foreign Exchange Market</h2><p>The <a href="https://www.theforexguy.com/how-forex-trading-works/" title="The Forex Market Structure" target="_blank" rel="noopener">foreign exchange market</a> is the “place” where currencies are traded. It is by far the largest market in the world. One unique aspect of this international market is that there is no central marketplace for foreign exchange. Rather, currency trading is conducted electronically over-the-counter (OTC), which means that all transactions occur via computer networks between traders around the world, rather than on one centralized exchange. The market is open 24 hours a day, five and a half days a week</p>
-<h2 id="The-Interbank-Network"><a href="#The-Interbank-Network" class="headerlink" title="The Interbank Network"></a>The Interbank Network</h2><p>The interbank network contains the central and major banks. They form the core of the Foreign Exchange network. </p>
-<h2 id="Market-Makers-MM"><a href="#Market-Makers-MM" class="headerlink" title="Market Makers (MM)"></a>Market Makers (MM)</h2><p>To be able to start making trades as a private individual you need to sign up to a broker. Your broker provides access the interbank network to start making trades with the rest of the world. Brokers are the market makers. When you place a trade order, the MM will first try to match up your trade with another client of the MM, bypassing the interbank network all together. If this is successful the MM now has a free hedge trade and is at no risk of loss. If the MM can’t match up the trade amongst its own clients, they will usually open a trade in the opposite direction to yours (a hedge trade) on the interbank network to protect themselves or even profit from any losses your trade may attract. MM’s have access to the cheaper interbank network market prices. The MM adds their commission onto the interbank price and passes that on to you. The difference in prices is called the “Bid-Ask spread”. The spread is one of the ways MMs make a profit.</p>
-<h2 id="Currency-Pairs"><a href="#Currency-Pairs" class="headerlink" title="Currency Pairs"></a>Currency Pairs</h2><p>A currency pair is the quotation of the relative value of a currency unit against the unit of another currency. The base currency is the first currency appearing in a currency pair quotation, followed by the second part of the quotation, called the quote currency: BBB/QQQ. From its inception in 1999 and as stipulated by the European Central Bank, the euro has first precedence as a base currency. Therefore, all currency pairs involving it should use it as their base, listed first. For example, the U.S. dollar and Euro exchange rate is identified as EUR/USD.</p>
-<h2 id="Price-Quotations"><a href="#Price-Quotations" class="headerlink" title="Price Quotations"></a>Price Quotations</h2><p>The quotation “EUR/USD 1.3225” means that for every Euro you will get 1.3225 U.S. Dollars. And for every 1 U.S. Dollar you will get 1/1.3225=0.7561 Euro.</p>
-<h2 id="Electronic-Trading-Platform"><a href="#Electronic-Trading-Platform" class="headerlink" title="Electronic Trading Platform"></a>Electronic Trading Platform</h2><p>An electronic trading platform is a software program that can be used to place orders for financial products over a computer network through a financial intermediary.</p>
-<h2 id="Automated-Forex-Trading"><a href="#Automated-Forex-Trading" class="headerlink" title="Automated Forex Trading"></a>Automated Forex Trading</h2><p>Automated forex trading is a system of trading foreign currencies with a computer program based on a set of analyses that help determine whether to buy or sell a currency pair at a given time. Automated forex trading uses a computer program that the trader configures to make decisions based on a set of rules. The biggest advantage of forex trading systems is that they take the emotion out of the process, which tends to reduce the behavioral finance biases that negatively impact investment decision making. Traders can also backtest trading system to see how they perform based on past data.</p>
-<h2 id="MetaTrader"><a href="#MetaTrader" class="headerlink" title="MetaTrader"></a>MetaTrader</h2><p>MetaQuotes’ <a href="https://www.metaquotes.net" title="MetaTrader" target="_blank" rel="noopener">MetaTrader</a> is undoubtedly the most popular software for online trading available for free. It is primarily used for Forex market trading. MetaTrader uses its own proprietary MetaQuotes Language (MQL) designed for developing automated trading robots, technical market indicators, scripts and function libraries within the MetaTrader software. It can be downloaded for free from the official website and through most <a href="https://admiralmarkets.com/trading-platforms" title="Admiral Markets" target="_blank" rel="noopener">Brokers’ websites</a>.</p>
-<p><img src="/images/pasted-18.png" alt="MetaTrader Screenshot"></p>
-<p>Metatrader also comes with the ability to download example code from the online community for free. Simply right click on “Scripts” and press “Online Library”.</p>
-<p><img src="/images/pasted-17.png" alt="MetaTrader Community Examples"></p>
-<p>This will then display a list of examples available to download. These examples can be executed and also modified.</p>
-<p><img src="/images/pasted-19.png" alt="MetaTrader Community list"></p>
-<p>To modify the examples they can be easily loaded in to the MetaEditor tool. This will show the code which can be modified, compiled and executed.</p>
-<p><img src="/images/pasted-20.png" alt="MetaEditor Example"></p>
-<h2 id="JForex"><a href="#JForex" class="headerlink" title="JForex"></a>JForex</h2><p>Dukascopy is a broker that also provide their clients with their own <a href="https://www.dukascopy.com" title="JForex" target="_blank" rel="noopener">JForex trading platform</a>. JForex is a free software for manual and automated trading and/or developing and testing trading strategies based on the Java programming language. Dukascopy provide a sample Java project that can be imported directly into Eclipse for developing automated trading strategies.</p>
-<p><img src="/images/pasted-13.png" alt="JForex Eclipse Project"></p>
-<p>The JForex platform tool also comes with its own lightweight integrated development environment for editing and compiling strategies in Java. </p>
-<p><img src="/images/pasted-14.png" alt="JForex Platform Tool"></p>
-<p>Dukascopy also runs a <a href="https://www.dukascopy.com/strategycontest/?language=en" title="Dukascopy Strategy Contest" target="_blank" rel="noopener">monthly strategy contest</a> for the best performing trading strategies. The historical submissions can be easily downloaded through the website or through JForex Platform Tool by navigating to the “Strategies” tab and pressing the folder icon.</p>
-<p><img src="/images/pasted-15.png" alt="JForex Strategy Competition"></p>
-<p>Note that a lot of these strategies may have been created with the assistance of the <a href="https://www.dukascopy.com/vjforex/" title="VisualJforex web tool" target="_blank" rel="noopener">VisualJforex web tool</a> so a visual strategies’ source code may be difficult to understand as it is automatically generated by the VisualJforex software.</p>
-<p><img src="/images/pasted-16.png" alt="VisualJForex Tool"></p>
-<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>Both MetaTrader and JForex have the ability to create trading robots (strategies). These robots can be backtested locally using historical financial data, or alternatively they can be backtested online in your Broker’s account using either simulated money with a demo account or real money with a live account. The main difference is that the simulated money does not impact on the simulated financial market, whereas using real money impacts supply and demand, and as a result, the price.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>These tools give software developers the tools to trade (and even sometimes profit) on the Forex market. There are examples available in both tools and Brokers often offer a demo account to run simulations for free.</p>
+		<h2 id="Equation-of-a-Line"><a href="#Equation-of-a-Line" class="headerlink" title="Equation of a Line"></a>Equation of a Line</h2><p>A line can be used to extrapolate predictions into the future. If you know two points that a line passes through you can define the equation of a line. The equation of a line is defined as</p>
+<p><img src="/images/pasted-30.png" alt="line equation"></p>
+<ul>
+<li>y is the dependent variable or result</li>
+<li>m is the slope of the line</li>
+<li>x is the independent variable or control</li>
+<li>c is the intercept where the line crosses the y axis</li>
+</ul>
+<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2><p>Sometimes a data set will have more than 2 points, and the points may be roughly arranged in a visible direction but not precisely. In cases like this a simple line equation will not work. For example when provided with a scatterplot of data, there is no specific slope or intercept and it must be estimated.</p>
+<p><img src="/images/pasted-31.png" alt="scatterplot"></p>
+<p>When there are several points in a dataset a modified version of the standard line equation can be used, where the slope and intercept are estimated using a calculation. The equation for simple linear regression is as follows:</p>
+<p><img src="/images/pasted-32.png" alt="linear regression equation"></p>
+<ul>
+<li>y is the dependent variable or predicted result</li>
+<li>β is the estimated slope of the line</li>
+<li>x is the independent variable or control</li>
+<li>α is the estimated intercept where the line crosses the y axis</li>
+</ul>
+<p>The value for the slope can be estimated using the following equation:</p>
+<p><img src="/images/pasted-33.png" alt="slope equation"></p>
+<ul>
+<li>x̄ is the mean of x</li>
+<li>ȳ is the mean of y</li>
+<li>i is the instance of data</li>
+<li>x_i is the independent variable for a given instance of data</li>
+<li>y_i is the dependent variable for a given instance of data</li>
+</ul>
+<p>The value for the intercept can be estimated using the following equation:</p>
+<p><img src="/images/pasted-34.png" alt="intercept equation"></p>
+<h2 id="Performance-Considerations"><a href="#Performance-Considerations" class="headerlink" title="Performance Considerations"></a>Performance Considerations</h2><p>Performing a simple linear regression on data stored in a CSV file will usually involve typical operations such as reading the file from disk, copying it across the network, storing it temporarily in an object in memory, performing a few calculations and displaying a result. The slowest parts of this task are usually reading the file from the hard drive and transferring it across the network.</p>
+<h2 id="Database-functions-and-procedures"><a href="#Database-functions-and-procedures" class="headerlink" title="Database functions and procedures"></a>Database functions and procedures</h2><p>Most database management systems come with some primitive functions for performing common mathematical operations such as max(), average() and round(). These functions allow us to perform operations on data inside the database without having to export it first to the filesystem or across the network. Performing the mathematical operations using database functions can save a significant amount of time. Some databases <a href="https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.sql.ref.doc/doc/r0002321.html" title="DB2 Functions" target="_blank" rel="noopener">such as DB2</a> have functions already built in to perform operations such as simple linear regression.</p>
+<p>It is possible to <a href="http://www.silota.com/docs/recipes/sql-linear-regression.html" title="SQL Linear Regression" target="_blank" rel="noopener">calculate Linear Regression Coefficients in SQL</a> by using window functions:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> slope, </span><br><span class="line">y_bar - x_bar * slope <span class="keyword">as</span> intercept</span><br><span class="line"><span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">sum</span>((x - x_bar) * (y - y_bar)) / <span class="keyword">sum</span>((x - x_bar) * (x - x_bar)) <span class="keyword">as</span> slope,</span><br><span class="line">    <span class="keyword">max</span>(x_bar) <span class="keyword">as</span> x_bar,</span><br><span class="line">    <span class="keyword">max</span>(y_bar) <span class="keyword">as</span> y_bar</span><br><span class="line">    <span class="keyword">from</span>(</span><br><span class="line">            <span class="keyword">select</span></span><br><span class="line">            x <span class="keyword">as</span> x, <span class="keyword">avg</span>(x) <span class="keyword">over</span> () <span class="keyword">as</span> x_bar,</span><br><span class="line">            y <span class="keyword">as</span> y, <span class="keyword">avg</span>(y) <span class="keyword">over</span> () <span class="keyword">as</span> y_bar</span><br><span class="line">            <span class="keyword">from</span>(</span><br><span class="line">                    <span class="keyword">select</span> <span class="keyword">value</span> <span class="keyword">as</span> y, ddate <span class="keyword">as</span> x <span class="keyword">from</span> sub</span><br><span class="line">                    <span class="keyword">right</span> <span class="keyword">join</span> <span class="keyword">num</span> <span class="keyword">on</span> sub.adsh = num.adsh</span><br><span class="line">                    <span class="keyword">right</span> <span class="keyword">join</span> pre <span class="keyword">on</span> num.adsh = pre.adsh</span><br><span class="line">                    <span class="keyword">and</span> num.tag = pre.tag <span class="keyword">and</span> num.version = pre.version</span><br><span class="line">                    <span class="keyword">where</span> cik=<span class="number">1081316</span> <span class="keyword">and</span> coreg=<span class="string">""</span></span><br><span class="line">                    <span class="keyword">and</span> stmt=<span class="string">"BS"</span> <span class="keyword">and</span> num.tag=<span class="string">"Assets"</span> <span class="keyword">and</span> <span class="keyword">form</span> = <span class="string">"10-K"</span></span><br><span class="line">            ) dataset</span><br><span class="line">    ) s</span><br><span class="line">) i;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-35.png" alt="linear regression impala sql"></p>
+<h2 id="Impala-functions-and-procedures"><a href="#Impala-functions-and-procedures" class="headerlink" title="Impala functions and procedures"></a>Impala functions and procedures</h2><p>Apache Impala is an open source parallel processing SQL query engine for data stored in a computer cluster running Apache Hadoop. Stored procedures as database objects are not supported by Impala yet. <a href="https://www.cloudera.com/documentation/enterprise/latest/topics/impala_udf.html" title="Impala UDFs" target="_blank" rel="noopener">Impala does however support</a> User Defined Functions (UDFs) written in C++, and Hive UDFs written in Java.</p>
+<h2 id="Apache-MADlib"><a href="#Apache-MADlib" class="headerlink" title="Apache MADlib"></a>Apache MADlib</h2><p><a href="http://madlib.apache.org/" title="MADlib" target="_blank" rel="noopener">Apache MADlib</a> is an open-source library for scalable in-database analytics. It provides data-parallel implementations of mathematical, statistical and machine learning methods for structured and unstructured data. MADlib operates on the data locally in-database and does not move data between multiple runtime environments unnecessarily.</p>
+<h2 id="MADlib-Port"><a href="#MADlib-Port" class="headerlink" title="MADlib Port"></a>MADlib Port</h2><p><a href="https://github.com/cloudera/madlibport" title="MADlib Port" target="_blank" rel="noopener">MADlib Port</a> brings in-DBMS data analytics to Impala. MADlib Port is a fork of a project called Apache MADlib which is an open source library for scalable in-database analytics. It provides data-parallel implementations of machine learning, mathematical, statistical, and graph methods on the PostgreSQL family of databases. The port of Apache MADlib to Impala is for MADlib v1.0 and requires boost v1.54 and is not being actively maintained.</p>
+<h2 id="Knime"><a href="#Knime" class="headerlink" title="Knime"></a>Knime</h2><p>KNIME is a free and open-source data analytics, reporting and integration platform. KNIME integrates various components for machine learning and data mining through its modular data pipelining concept. <a href="https://www.knime.com/knime-big-data-connectors" title="KNIME Connectors" target="_blank" rel="noopener">The KNIME Big Data Connectors</a> extension allow easy access to Apache Hadoop data from within KNIME Analytics Platform and KNIME Server. This extension offers a set of KNIME nodes for accessing Hadoop/HDFS via Hive or Impala and ships with all required libraries.</p>
+<h2 id="Installing-KNIME-on-Cloudera"><a href="#Installing-KNIME-on-Cloudera" class="headerlink" title="Installing KNIME on Cloudera"></a>Installing KNIME on Cloudera</h2><p>To install and configure KNIME on Cloudera Quickstart VM run the following commands in bash:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install webkitgtk</span><br><span class="line">$ <span class="built_in">cd</span> ~/Downloads</span><br><span class="line">$ wget https://download.knime.org/analytics-platform/linux/knime_3.5.3.linux.gtk.x86_64.tar.gz</span><br><span class="line">$ tar -xzvf knime_3.5.3.linux.gtk.x86_64.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> *knime*</span><br><span class="line">$ ./knime</span><br></pre></td></tr></table></figure></p>
+<p>Then install the Impala KNIME database connector extension: Press File -&gt; Install KNIME Extensions -&gt; Search “Big Data Connectors” -&gt; Tick Checkbox -&gt; Next -&gt; Next -&gt; Select “I accept the terms of the license agreements” -&gt; Finish -&gt; Restart Knime</p>
+<h2 id="Perform-a-Basic-Impala-Query"><a href="#Perform-a-Basic-Impala-Query" class="headerlink" title="Perform a Basic Impala Query"></a>Perform a Basic Impala Query</h2><p>Create a new workflow: Press File -&gt; New -&gt; New KNIME Workflow -&gt; Next -&gt; Finish.</p>
+<p>To perform a simple SQL query to Impala drag an “Impala Connector”, a “Database Reader” and an “Interactive Table” on to the user interface.</p>
+<p><img src="/images/pasted-36.png" alt="KNIME Impala SQL Query setup"></p>
+<p>Configure the Impala Connector: Under the “Node Repository” view drill down to -&gt; Database -&gt; Connector -&gt; Impala Connector -&gt; Drag it on to the workflow -&gt; Right click -&gt; Configure.</p>
+<p>Use the following settings:</p>
+<ul>
+<li>Hostname: 127.0.0.1</li>
+<li>Database Name: default</li>
+<li>Use username and password</li>
+<li>username:impala</li>
+<li>password: &lt;EMPTY></li>
+</ul>
+<p><img src="/images/pasted-37.png" alt="KNIME Database Connection"></p>
+<p>Edit the database reader node and enter an SQL query:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> tag</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/pasted-38.png" alt="SQL Query Example"></p>
+<p>Execute the workflow by pressing the green arrow on top.</p>
+<p><img src="/images/pasted-39.png" alt="Execute workflow"></p>
+<p>View the results stored in the interactive table node by right clicking on it and pressing “View Table View”.</p>
+<p><img src="/images/pasted-40.png" alt="View table view"></p>
+<p>The SQL query results should be displayed in a table.</p>
+<p><img src="/images/pasted-41.png" alt="SQL Table Results"></p>
+<h2 id="KNIME-Linear-Regression"><a href="#KNIME-Linear-Regression" class="headerlink" title="KNIME Linear Regression"></a>KNIME Linear Regression</h2><p>Next add a node for Linear Regression.</p>
+<p><img src="/images/pasted-42.png" alt="KNIME Linear Regression Workflow"></p>
+<p>Modify the Database Reader node and add the following SQL query:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">value</span> <span class="keyword">as</span> y, ddate <span class="keyword">as</span> x <span class="keyword">from</span> sub</span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> <span class="keyword">num</span> <span class="keyword">on</span> sub.adsh = num.adsh</span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> pre <span class="keyword">on</span> num.adsh = pre.adsh</span><br><span class="line"><span class="keyword">and</span> num.tag = pre.tag <span class="keyword">and</span> num.version = pre.version</span><br><span class="line"><span class="keyword">where</span> cik=<span class="number">1081316</span> <span class="keyword">and</span> coreg=<span class="string">""</span></span><br><span class="line"><span class="keyword">and</span> stmt=<span class="string">"BS"</span> <span class="keyword">and</span> num.tag=<span class="string">"Assets"</span> <span class="keyword">and</span> <span class="keyword">form</span> = <span class="string">"10-K"</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/pasted-43.png" alt="Linear Regression SQL KNIME"></p>
+<p>Configure the Linear Regression node. (You may not be able to see which variables to use as parameters. To populate the variables on the user interface execute all the nodes before the Linear Regression node.) In the top section called “Target” there is a drop down to select the dependent variable y. In the “Values” § “Include” section add the independent variable x.</p>
+<p><img src="/images/pasted-44.png" alt="Configure Linear Regression"></p>
+<p>Run all the nodes and when the execution is finished view the results in the interactive table.</p>
+<p><img src="/images/pasted-45.png" alt="KNIME Linear Regression Results"></p>
 
 	
 	</div>
@@ -187,7 +229,7 @@
 
 
 <div id="page-nav">
-	<nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i>Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+	<nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i>Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
 	</div>
 
         	</main>
